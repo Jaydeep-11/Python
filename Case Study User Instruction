@@ -1,0 +1,14 @@
+Test Everything
+
+Admin Panel:
+
+Run the server: python manage.py runserver
+Access the admin panel at http://127.0.0.1:8000/admin and log in with your superuser account.
+You should see a fully functional admin interface for managing service requests.
+Manage Requests View:
+
+Log in as a staff user and visit http://127.0.0.1:8000/requests/manage.
+You should see a table of all service requests with options to mark them as resolved.
+Customer Authentication:
+
+Test login and logout at http://127.0.0.1:8000/accounts/login/ and http://127.0.0.1:8000/accounts/logout/.
