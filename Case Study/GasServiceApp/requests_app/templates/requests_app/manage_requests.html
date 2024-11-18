@@ -1,0 +1,27 @@
+<h1>Manage Service Requests</h1>
+<table border="1">
+    <tr>
+        <th>Customer</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Resolved At</th>
+        <th>Actions</th>
+    </tr>
+    {% for request in requests %}
+    <tr>
+        <td>{{ request.customer.username }}</td>
+        <td>{{ request.request_type }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.created_at }}</td>
+        <td>{{ request.resolved_at }}</td>
+        <td>
+            <!-- Add buttons or links for actions like "Mark as Resolved" -->
+            <form method="post" action="{% url 'resolve_request' request.id %}">
+                {% csrf_token %}
+                <button type="submit">Mark Resolved</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
